@@ -40,7 +40,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('files/assets/css/jquery.dataTables.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('files/assets/css/all.css')}}" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{asset('files/assets/css/toastr.min.css')}}">
-{{--    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />--}}
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    {{--    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />--}}
 {{--    <link href="https://cdn.datatables.net/autofill/2.3.3/css/autoFill.dataTables.min.css" rel="stylesheet" />--}}
 {{--    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">--}}
 {{--    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css">--}}
@@ -101,6 +102,11 @@
             background-size: cover;
             background-position: top center;
             background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .select2-selection__choice{
+            float: none !important;
+            display: inline-block !important;
         }
 
 
@@ -275,7 +281,7 @@
 
 {{--<script src="{{ asset('files/assets/js/rocket-loader.min.js' }}" data-cf-settings="49" defer=""></script>--}}
 <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js" data-cf-settings="49" defer=""></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 {{-- tostr and sweet alert --}}
 <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
@@ -319,3 +325,5 @@
 </body>
 
 </html>
+
+sudo apt install php7.3 libapache2-mod-php7.3 php7.3-mbstring php7.3-xmlrpc php7.3-soap php7.3-gd php7.3-xml php7.3-cli php7.3-zip

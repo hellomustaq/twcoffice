@@ -93,6 +93,13 @@
                             <small class="red">Please Do not use (")</small>
                         </div>
                         <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Item subtitles: <span class="red">*</span></label>
+                            <select name="subtitles[]" id="subtitles" class="form-control" multiple>
+                                <option value="create">create</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Item Type: <span class="red">*</span></label>
                             <input type="text" class="form-control" id="recipient-name" name="item_type"
                                    value="{{ old('item_type') }}" required="">
@@ -190,6 +197,14 @@
                 )
             }
         })
+    });
+</script>
+
+<script>
+    $("#subtitles").select2({
+        tags: true,
+        width: '100%',
+        theme: "classic"
     });
 </script>
 
