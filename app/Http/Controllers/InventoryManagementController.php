@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\InventoryManagement;
 use App\Models\Item;
 use App\Models\ItemLog;
+use App\Models\ItemSubtitle;
 use App\Models\Manufacture;
 use App\Models\MotherCategory;
 use App\Models\Project;
@@ -77,6 +78,17 @@ class InventoryManagementController extends Controller
 
         $createItem->save();
 
+
+        if ($request->subtitle_name){
+            foreach ($request->subtitle_name as $index => $sn){
+                ItemSubtitle::create([
+                    'inventory_management_id' => $createItem->id,
+                    'name' => $request->subtitle_name[$index],
+                    'price' => $request->subtitle_price[$index],
+                ]);
+            }
+        }
+
         return redirectBackWithNotification('success', 'Item Create Successfully!');
 
 //        return redirect()->back()->with('message','Item Create Successfully');
@@ -119,6 +131,14 @@ class InventoryManagementController extends Controller
         if ($request->ajax()) {
             return response()->json([
                 'item' => InventoryManagement::where('mother_category_id', $id)->get()
+            ]);
+        }
+    }
+
+    public function selectItemSubtitle(Request $request, $id) {
+        if ($request->ajax()) {
+            return response()->json([
+                'item_subtitle' => ItemSubtitle::where('inventory_management_id', $id)->get()
             ]);
         }
     }

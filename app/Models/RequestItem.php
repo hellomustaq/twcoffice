@@ -23,7 +23,8 @@ class RequestItem extends Model
         'cartId',
         'status_req',
         'item_type',
-        'item_description'
+        'item_description',
+        'item_subtitle_id'
         ];
 
     public function requestItem(): \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -39,6 +40,10 @@ class RequestItem extends Model
     public function requestProject(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Project::class,'project_id','project_id');
+    }
+
+    public function subtitle(){
+        return $this->belongsTo(ItemSubtitle::class,'item_subtitle');
     }
 
 

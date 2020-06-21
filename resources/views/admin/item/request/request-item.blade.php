@@ -97,6 +97,12 @@
                                     </select>
                                 </div>
                                 <div class="col-sm-12">
+                                    <small class="text-uppercase text-dark">Item Subtitle</small>
+                                    <select id="item_subtitle" name="item_subtitle" class="form-control" required=" " oninvalid="this.setCustomValidity('Please select an item subtitle')"  onblur="setRequestCode()">
+                                        <option disabled selected>Select Item subtitle....</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-12">
                                     <small class="text-uppercase text-dark">Item Type<small style="color: red">*</small></small>
                                     <input type="text" class="form-control" id="recipient-name" name="item_type" placeholder="Item Type"
                                            value="{{ old('item_type') }}" required="">
@@ -190,8 +196,7 @@
                     }
                 </script>
             </div>
-
-                <div class="col-sm-8">
+            <div class="col-sm-8">
                     <div class="card comp-card">
                         <form action="{{route('request-cart-inventory')}}" method="post" enctype="multipart/form-data">
                             @csrf
@@ -487,6 +492,26 @@
                 }
             })
         });
+
+
+        $('#items').on('change', e => {
+                e.preventDefault();
+                $('#item_subtitle').empty();
+                $('#item_subtitle').append(`<option disabled selected>Please select a item name</option>`);
+
+                var itemId = $('#items').find(":selected").val();
+                var iid = itemId.split(" -");
+                console.log(iid[0]);
+                $.ajax({
+                    url: `inventory/subtitle/${iid[0]}`,
+                    success: data => {
+                        data.item_subtitle.forEach(subtitle =>
+                            $('#item_subtitle').append(`<option value="${subtitle.id} - ${subtitle.name}">${subtitle.name}</option>`)
+                        )
+                    }
+                })
+        });
+
     </script>
 
     <script>

@@ -92,11 +92,13 @@
                                    value="{{ old('item_name') }}" required="">
                             <small class="red">Please Do not use (")</small>
                         </div>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Item subtitles: <span class="red">*</span></label>
-                            <select name="subtitles[]" id="subtitles" class="form-control" multiple>
-                                <option value="create">create</option>
-                            </select>
+                        <div class="field_wrapper form-group">
+                            <div>
+                                <label class="col-form-label">Item subtitles: </label><br>
+                                <input type="text" name="subtitle_name[]" value="" placeholder="subtitle name.."/>
+                                <input type="text" name="subtitle_price[]" value="" placeholder="subtitle price.."/>
+                                <a href="javascript:void(0);" class="add_button" title="Add field"><i style="color: limegreen" class="fa fa-plus-circle"></i></a>
+                            </div>
                         </div>
 
                         <div class="form-group">
@@ -205,6 +207,34 @@
         tags: true,
         width: '100%',
         theme: "classic"
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        let maxField = 20; //Input fields increment limitation
+        let addButton = $('.add_button'); //Add button selector
+        let wrapper = $('.field_wrapper'); //Input field wrapper
+        let fieldHTML = '<div><input style="margin-right: 5px;" type="text" name="subtitle_name[]" value="" placeholder="subtitle name"/>' +
+            '<input style="margin-right:5px;" type="text" name="subtitle_price[]" value="" placeholder="subtitle price"/>' +
+            '<a href="javascript:void(0);" class="remove_button"><i style="color: red;" class="fa fa-minus-circle"></i></div>'; //New input field html
+        let x = 1; //Initial field counter is 1
+
+        //Once add button is clicked
+        $(addButton).click(function(){
+            //Check maximum number of input fields
+            if(x < maxField){
+                x++; //Increment field counter
+                $(wrapper).append(fieldHTML); //Add field html
+            }
+        });
+
+        //Once remove button is clicked
+        $(wrapper).on('click', '.remove_button', function(e){
+            e.preventDefault();
+            $(this).parent('div').remove(); //Remove field html
+            x--; //Decrement field counter
+        });
     });
 </script>
 

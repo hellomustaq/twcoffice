@@ -59,6 +59,8 @@
                                         <th scope="col">Vat</th>
                                         <th scope="col">Quantity</th>
                                         <th scope="col">Amount</th>
+                                        <th scope="col">Subtitle Name</th>
+                                        <th scope="col">Subtitle Actual Price</th>
                                         <th scope="col">Action</th>
                                         <th scope="col">Status</th>
                                     </tr>
@@ -97,6 +99,8 @@
                                                        id="amount" value="{{ $item->amount }}"
                                                        readonly/>
                                             </th>
+                                            <th>{{ $item->subtitle->name }}</th>
+                                            <th>{{ $item->subtitle->price }}</th>
                                             <th hidden>
                                                 <input style="width: 100px; background-color: white; border: none"
                                                        type="text" name="addmore[{{ $item->item_id }}][request_code]"

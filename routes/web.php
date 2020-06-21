@@ -287,6 +287,7 @@ Route::middleware('auth')->group(function() {
         Route::get('inventory/item-sub-category/{id}', 'InventoryManagementController@selectItemSubCategoryAjax');
         Route::get('inventory/item-category/{id}', 'InventoryManagementController@selectItemCategoryAjax');
         Route::get('inventory/item-mother-category/{id}', 'InventoryManagementController@selectItemMotherCategoryAjax');
+        Route::get('inventory/subtitle/{id}', 'InventoryManagementController@selectItemSubtitle');
 
 
         //Request Item List

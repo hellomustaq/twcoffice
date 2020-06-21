@@ -80,6 +80,7 @@ class RequestItemController extends Controller
                 'amount' => $request->amount,
                 'item_type' => $request->item_type,
                 'item_description' => $request->item_description,
+                'item_subtitle' => $request->item_subtitle
             ]
         ])->associate(RequestItem::class);
 
@@ -151,7 +152,7 @@ class RequestItemController extends Controller
 
         $cartValue = $cartId;
 
-        $itemList = RequestItem::where('cartId','=',$cartValue)
+        $itemList = RequestItem::with('subtitle')->where('cartId','=',$cartValue)
             ->orderBy('created_at', 'desc')
             ->get();
 

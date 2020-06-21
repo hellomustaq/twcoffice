@@ -17,6 +17,10 @@ class InventoryManagement extends Model
         return $this->hasMany(RequestItem::class);
     }
 
+    public function subtitles(){
+        return $this->hasMany(ItemSubtitle::class);
+    }
+
     public function motherCategory(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(MotherCategory::class,'mother_category_id');
