@@ -44,7 +44,6 @@ class InventoryManagementController extends Controller
             'mother_category_id'        => ['required'],
             'item_name'              => ['required', 'string'],
             'item_unit'        => ['required', 'string'],
-            'item_price'          => ['required'],
             'item_reusable'          => ['required']
         ]);
 
@@ -70,7 +69,7 @@ class InventoryManagementController extends Controller
         $createItem->manufacture_id = $request->post('manufacture_id');
         $createItem->item_name = $request->post('item_name');
         $createItem->item_unit = $request->post('item_unit');
-        $createItem->item_price = $request->post('item_price');
+        $createItem->item_price = 0;
         $createItem->item_reusable = $request->post('item_reusable');
         $createItem->item_description = $request->post('item_description');
         $createItem->item_type = $request->post('item_type');

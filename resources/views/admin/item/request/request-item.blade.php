@@ -97,18 +97,18 @@
                                     </select>
                                 </div>
                                 <div class="col-sm-12">
-                                    <small class="text-uppercase text-dark">Item Subtitle</small>
+                                    <small class="text-uppercase text-dark">Item Subtitle<small style="color: red">*</small></small>
                                     <select id="item_subtitle" name="item_subtitle" class="form-control" required=" " oninvalid="this.setCustomValidity('Please select an item subtitle')"  onblur="setRequestCode()">
                                         <option disabled selected>Select Item subtitle....</option>
                                     </select>
                                 </div>
+{{--                                <div class="col-sm-12">--}}
+{{--                                    <small class="text-uppercase text-dark">Item Type<small style="color: red">*</small></small>--}}
+{{--                                    <input type="text" class="form-control" id="recipient-name" name="item_type" placeholder="Item Type"--}}
+{{--                                           value="{{ old('item_type') }}" required="">--}}
+{{--                                </div>--}}
                                 <div class="col-sm-12">
-                                    <small class="text-uppercase text-dark">Item Type<small style="color: red">*</small></small>
-                                    <input type="text" class="form-control" id="recipient-name" name="item_type" placeholder="Item Type"
-                                           value="{{ old('item_type') }}" required="">
-                                </div>
-                                <div class="col-sm-12">
-                                    <small class="text-uppercase text-dark">Item Description<small style="color: red">*</small></small>
+                                    <small class="text-uppercase text-dark">Item Description</small>
                                     <textarea type="text" class="form-control" id="recipient-name" name="item_description" placeholder="Item Description"
                                               value="{{ old('item_description') }}" required="" rows="5">
                                     </textarea>

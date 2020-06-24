@@ -101,13 +101,13 @@
                             </div>
                         </div>
 
+{{--                        <div class="form-group">--}}
+{{--                            <label for="recipient-name" class="col-form-label">Item Type: <span class="red">*</span></label>--}}
+{{--                            <input type="text" class="form-control" id="recipient-name" name="item_type"--}}
+{{--                                   value="{{ old('item_type') }}" required="">--}}
+{{--                        </div>--}}
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Item Type: <span class="red">*</span></label>
-                            <input type="text" class="form-control" id="recipient-name" name="item_type"
-                                   value="{{ old('item_type') }}" required="">
-                        </div>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Item Description: <span class="red">*</span></label>
+                            <label for="recipient-name" class="col-form-label">Item Description: </label>
                             <textarea type="text" class="form-control" id="recipient-name" name="item_description"
                                    value="{{ old('item_description') }}" required="" rows="5">
                             </textarea>
@@ -118,11 +118,11 @@
                             <input type="text" class="form-control" id="recipient-name" name="item_unit"
                                    value="{{ old('item_unit') }}" required="">
                         </div>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Per Unit Price <span class="red">*</span></label>
-                            <input type="text" class="form-control" id="recipient-name" name="item_price"
-                                   value="{{ old('item_price') }}">
-                        </div>
+{{--                        <div class="form-group">--}}
+{{--                            <label for="recipient-name" class="col-form-label">Per Unit Price <span class="red">*</span></label>--}}
+{{--                            <input type="text" class="form-control" id="recipient-name" name="item_price"--}}
+{{--                                   value="{{ old('item_price') }}">--}}
+{{--                        </div>--}}
                         <div class="form-row mb-3">
                             <div class="col">
                                 <small class="text-uppercase text-dark">Item Image</small>
