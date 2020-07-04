@@ -42,7 +42,7 @@
                                             @if( $item->mother_category_id === null)
                                                 <span class="label label-danger">Not Selected</span>
                                             @else
-                                                {{$item->motherCategory->mother_name}}
+                                                {{$item->motherCategory->mother_name ?? ''}}
                                             @endif
                                         </td>
                                         <td>
