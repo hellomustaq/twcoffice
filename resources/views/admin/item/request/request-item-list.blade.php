@@ -99,8 +99,8 @@
                                                        id="amount" value="{{ $item->amount }}"
                                                        readonly/>
                                             </th>
-                                            <th>{{ $item->subtitle->name }}</th>
-                                            <th>{{ $item->subtitle->price }}</th>
+                                            <th>{{ $item->subtitle->name ?? 'NONE'}}</th>
+                                            <th>{{ $item->subtitle->price ?? 'NONE' }}</th>
                                             <th hidden>
                                                 <input style="width: 100px; background-color: white; border: none"
                                                        type="text" name="addmore[{{ $item->item_id }}][request_code]"
