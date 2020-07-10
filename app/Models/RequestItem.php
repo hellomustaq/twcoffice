@@ -24,7 +24,7 @@ class RequestItem extends Model
         'status_req',
         'item_type',
         'item_description',
-        'item_subtitle_id'
+        'item_subtitle'
         ];
 
     public function requestItem(): \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -43,7 +43,7 @@ class RequestItem extends Model
     }
 
     public function subtitle(){
-        return $this->belongsTo(ItemSubtitle::class,'item_subtitle');
+        return $this->belongsTo(ItemSubtitle::class,'item_subtitle','id');
     }
 
 

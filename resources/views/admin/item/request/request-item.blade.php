@@ -207,6 +207,7 @@
                                     <thead>
                                     <tr>
                                         <th scope="col">Item Name</th>
+                                        <th scope="col">Item subtitle name</th>
                                         <th scope="col">Mother Category</th>
                                         <th scope="col">Category</th>
                                         <th scope="col">Sub Category</th>
@@ -223,56 +224,62 @@
                                         $uniqid = \Str::random(12);
                                     @endphp
                                     <tbody>
+{{--                                    {{ dd(Cart::content()) }}--}}
                                     @foreach(Cart::content() as $index => $item)
                                         <tr>
                                             <td>
                                                 <input style="width: 200px; background-color: #aed581; border: none"
-                                                       type="text" name="addmore[{{ $item->options->item_id }}][item_id]"
+                                                       type="text" name="addmore[{{ $index }}][item_id]"
                                                        id="item_id" value="{{ $item->options->item_id}}" readonly/>
+                                            </td>
+                                            <td>
+                                                <input style="width: 200px; background-color: #aed581; border: none"
+                                                       type="text" name="addmore[{{ $index }}][item_subtitle]"
+                                                       id="item_subtitle" value="{{ $item->options->item_subtitle}}" readonly/>
                                             </td>
                                             <td hidden>
                                                 <input style="width: 30px; background-color: #aed581; border: none"
-                                                       type="number" name="addmore[{{ $item->options->item_id }}][status_req]"
+                                                       type="number" name="addmore[{{ $index }}][status_req]"
                                                        id="status" value="0" readonly/>
                                             </td>
                                             <td hidden>
                                                 <input style="width: 30px; background-color: #aed581; border: none"
-                                                       type="text" name="addmore[{{ $item->options->item_id }}][cartId]"
+                                                       type="text" name="addmore[{{ $index }}][cartId]"
                                                        id="cartId" value="{{ $uniqid }}" readonly/>
                                             </td>
                                             <td >
                                                 <input  style="width: 200px; background-color: #aed581; border: none"
-                                                       type="text" name="addmore[{{ $item->options->item_id }}][mother_category_id]"
+                                                       type="text" name="addmore[{{ $index }}][mother_category_id]"
                                                        id="item_id" value="{{ $item->options->mother_category_id }}" readonly/>
                                             </td>
                                             <td >
                                                 <input  style="width: 200px; background-color: #aed581; border: none"
-                                                       type="text" name="addmore[{{ $item->options->item_id }}][category_id]"
+                                                       type="text" name="addmore[{{ $index }}][category_id]"
                                                        id="item_id" value="{{ $item->options->category_id }}" readonly/>
                                             </td>
                                             <td >
                                                 <input style="width: 200px; background-color: #aed581; border: none"
-                                                       type="text" name="addmore[{{ $item->options->item_id }}][sub_category_id]"
+                                                       type="text" name="addmore[{{ $index }}][sub_category_id]"
                                                        id="item_id" value="{{ $item->options->sub_category_id }}" readonly/>
                                             </td>
                                             <td hidden>
                                                 <input hidden style="width: 30px; background-color: #aed581; border: none"
-                                                       type="text" name="addmore[{{ $item->options->item_id }}][manufacture_id]"
+                                                       type="text" name="addmore[{{ $index }}][manufacture_id]"
                                                        id="item_id" value="{{ $item->options->manufacture_id }}" readonly/>
                                             </td>
                                             <td hidden>
                                                 <input hidden style="width: 30px; background-color: #aed581; border: none"
-                                                       type="text" name="addmore[{{ $item->options->item_id }}][project_id]"
+                                                       type="text" name="addmore[{{ $index }}][project_id]"
                                                        id="item_id" value="{{ $item->options->project_id }}" readonly/>
                                             </td>
                                             <td>
                                                 <input style="width: 100px; background-color: #aed581; border: none"
-                                                       type="text" name="addmore[{{ $item->options->item_id }}][item_type]"
+                                                       type="text" name="addmore[{{ $index }}][item_type]"
                                                        id="item_id" value="{{ $item->options->item_type }}" readonly/>
                                             </td>
                                             <td>
                                                 <input style="width: 300px; background-color: #aed581; border: none"
-                                                           type="text" name="addmore[{{ $item->options->item_id }}][item_description]"
+                                                           type="text" name="addmore[{{ $index }}][item_description]"
                                                        id="item_id" value="{{ $item->options->item_description }}" readonly/>
                                             </td>
                                             @php
@@ -280,41 +287,41 @@
                                             @endphp
                                             <td hidden>
                                                 <input hidden style="width: 30px; background-color: #aed581; border: none"
-                                                       type="text" name="addmore[{{ $item->options->item_id }}][request_date]"
+                                                       type="text" name="addmore[{{ $index }}][request_date]"
                                                        id="item_id" value="{{ $dateTime }}" readonly/>
                                             </td>
                                             <td hidden>
                                                 <input hidden style="width: 30px; background-color: #aed581; border: none"
-                                                       type="text" name="addmore[{{ $item->options->item_id }}][request_code]"
+                                                       type="text" name="addmore[{{ $index }}][request_code]"
                                                        id="item_id" value="{{ $item->options->request_code }}" readonly/>
                                             </td>
                                             <td hidden>
                                                 <input hidden style="width: 30px; background-color: #aed581; border: none"
-                                                       type="text" name="addmore[{{ $item->options->item_id }}][request_id]"
+                                                       type="text" name="addmore[{{ $index }}][request_id]"
                                                        id="item_id" value="{{ $item->options->request_id }}" readonly/>
                                             </td>
                                             <td>
                                                 <input style="width: 100px; background-color: #aed581; border: none"
-                                                       type="text" name="addmore[{{ $item->options->item_id }}][price]"
+                                                       type="text" name="addmore[{{ $index }}][price]"
                                                        id="price" value="{{ $item->options->price }}"
                                                        readonly/>
                                             </td>
                                             <td>
                                                 <input style="width: 100px; background-color: #aed581; border: none"
-                                                       type="text" name="addmore[{{ $item->options->item_id }}][vat]"
+                                                       type="text" name="addmore[{{ $index }}][vat]"
                                                        id="vat" value="{{ $item->options->vat }}"
                                                        readonly/>
                                             </td>
                                             <td>
                                                 <input style="width: 100px; background-color: #aed581; border: none"
-                                                       type="text" name="addmore[{{ $item->options->item_id }}][quantity]"
+                                                       type="text" name="addmore[{{ $index }}][quantity]"
                                                        id="quantity"
                                                        value="{{ $item->options->quantity }}"
                                                        readonly/>
                                             </td>
                                             <td>
                                                 <input style="width: 100px; background-color: #aed581; border: none"
-                                                       type="text" name="addmore[{{ $item->options->item_id }}][amount]"
+                                                       type="text" name="addmore[{{ $index }}][amount]"
                                                        id="amount" value="{{ $item->options->amount }}"
                                                        readonly/>
                                             </td>
@@ -506,7 +513,7 @@
                     url: `inventory/subtitle/${iid[0]}`,
                     success: data => {
                         data.item_subtitle.forEach(subtitle =>
-                            $('#item_subtitle').append(`<option value="${subtitle.id} - ${subtitle.name}">${subtitle.name}</option>`)
+                            $('#item_subtitle').append(`<option value="${subtitle.id}">${subtitle.name}</option>`)
                         )
                     }
                 })

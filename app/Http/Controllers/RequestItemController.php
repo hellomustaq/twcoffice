@@ -57,7 +57,6 @@ class RequestItemController extends Controller
 
     public function processRequest(Request $request): RedirectResponse
     {
-
         $add = Cart::add([
             'id' => $request->item_id,
             'name' => 'name',
@@ -84,17 +83,11 @@ class RequestItemController extends Controller
             ]
         ])->associate(RequestItem::class);
 
-//        dd($add);
-
-
         return redirect()->back()->with('message','Item added successfully');
 
     }
 
     public function processCartRequest(Request $request) {
-
-//        dd($request->all());
-
         $request->validate([
             'addmore.*.item_id' => 'required',
             'addmore.*.price' => 'required',
