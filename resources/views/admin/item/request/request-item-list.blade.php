@@ -70,7 +70,7 @@
                                         <tr>
                                             <th>
                                                 <input style="width: 200px; background-color: white; border: none"
-                                                       type="text" name="addmore[{{ $item->item_id }}][item_id]"
+                                                       type="text" name="addmore[{{ $index }}][item_id]"
                                                        id="item_id" value="{{ $item->item_id}}" readonly/><br><br>
                                                 <span class="label label-success">{{ $item->mother_category_id }}</span><br><br>
                                                 <span class="label label-success">{{ $item->category_id }}</span><br><br>
@@ -80,22 +80,22 @@
                                             </th>
                                             <th>
                                                 <input style="width: 100px; background-color: white; border: none"
-                                                       type="text" name="addmore[{{ $item->item_id }}][price]"
+                                                       type="text" name="addmore[{{ $index }}][price]"
                                                        id="price" value="{{ $item->price }}" readonly/>
                                             </th>
                                             <th>
                                                 <input style="width: 100px; background-color: white; border: none"
-                                                       type="text" name="addmore[{{ $item->item_id }}][vat]"
+                                                       type="text" name="addmore[{{ $index }}][vat]"
                                                        id="vat" value="{{ $item->vat }}" readonly/>
                                             </th>
                                             <th>
                                                 <input style="width: 100px; background-color: white; border: none"
-                                                       type="text" name="addmore[{{ $item->item_id }}][quantity]"
+                                                       type="text" name="addmore[{{ $index }}][quantity]"
                                                        id="quantity" value="{{ $item->quantity }}" readonly/>
                                             </th>
                                             <th>
                                                 <input style="width: 100px; background-color: white; border: none"
-                                                       type="text" name="addmore[{{ $item->item_id }}][amount]"
+                                                       type="text" name="addmore[{{ $index }}][amount]"
                                                        id="amount" value="{{ $item->amount }}"
                                                        readonly/>
                                             </th>
@@ -103,25 +103,25 @@
                                             <th>{{ $item->subtitle->price ?? 'NONE' }}</th>
                                             <th hidden>
                                                 <input style="width: 100px; background-color: white; border: none"
-                                                       type="text" name="addmore[{{ $item->item_id }}][request_code]"
+                                                       type="text" name="addmore[{{ $index }}][request_code]"
                                                        id="request_code" value="{{ $item->request_code }}"
                                                        readonly/>
                                             </th>
                                             <th hidden>
                                                 <input style="width: 100px; background-color: white; border: none"
-                                                       type="text" name="addmore[{{ $item->item_id }}][user_id]"
+                                                       type="text" name="addmore[{{ $index }}][user_id]"
                                                        id="request_code" value="{{ $item->request_id }}"
                                                        readonly/>
                                             </th>
                                             <th hidden>
                                                 <input style="width: 100px; background-color: white; border: none"
-                                                       type="text" name="addmore[{{ $item->item_id }}][cartId]"
+                                                       type="text" name="addmore[{{ $index }}][cartId]"
                                                        id="cartId" value="{{ $item->cartId }}"
                                                        readonly/>
                                             </th>
                                             <th hidden>
                                                 <input style="width: 100px; background-color: white; border: none"
-                                                       type="text" name="addmore[{{ $item->item_id }}][project_id]"
+                                                       type="text" name="addmore[{{ $index }}][project_id]"
                                                        id="project_id" value="{{ $item->project_id }}"
                                                        readonly/>
                                             </th>

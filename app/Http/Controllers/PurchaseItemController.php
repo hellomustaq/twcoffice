@@ -29,7 +29,6 @@ class PurchaseItemController extends Controller
             'addmore.*.amount' => 'required',
         ]);
 
-
         foreach ($request->addmore as $key => $value) {
                 PurchaseItem::create($value);
         }
@@ -48,7 +47,6 @@ class PurchaseItemController extends Controller
         $itemList = PurchaseItem::where('cartId','=',$cartValue)
             ->orderBy('created_at', 'desc')
             ->get();
-
 
         return view('admin.item.purchase.purchase-item')->with([
             'itemList' => $itemList,
@@ -86,6 +84,7 @@ class PurchaseItemController extends Controller
                 ->groupBy('cartId')
                 ->get();
         }
+
 
         return view('admin.item.purchase.purchase-package-list')->with([
             'itemList' => $itemList
@@ -130,13 +129,6 @@ class PurchaseItemController extends Controller
         $vendor = $projectItem->employees()
             ->where('role_id', '=', $role_id)
             ->orderBy('name')->get();
-
-
-//        dd($vendor);
-
-
-//        $vendor = User::where('role_id','16')->get();
-
 
         return view('admin.item.purchase.edit-purchase-item')
             ->with([
