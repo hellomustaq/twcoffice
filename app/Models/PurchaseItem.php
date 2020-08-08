@@ -18,7 +18,8 @@ class PurchaseItem extends Model
         'payment_amount',
         'cartId',
         'status',
-        'project_id'
+        'project_id',
+        'item_subtitle'
     ];
 
     public function userRole(): \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -39,6 +40,10 @@ class PurchaseItem extends Model
     public function purchaseProject(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Project::class,'project_id','project_id');
+    }
+
+    public function subtitle(){
+        return $this->belongsTo(ItemSubtitle::class,'item_subtitle','id');
     }
 
 }

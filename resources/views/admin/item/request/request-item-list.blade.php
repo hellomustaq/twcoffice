@@ -99,7 +99,13 @@
                                                        id="amount" value="{{ $item->amount }}"
                                                        readonly/>
                                             </th>
-                                            <th>{{ $item->subtitle->name ?? 'NONE'}}</th>
+                                            <th>
+                                                <input style="width: 100px; background-color: white; border: none"
+                                                       type="hidden" name="addmore[{{ $index }}][item_subtitle]"
+                                                       id="" value="{{ $item->subtitle->id ?? "None" }}"
+                                                       readonly/>
+                                                {{ $item->subtitle->name ?? 'NONE'}}
+                                            </th>
                                             <th>{{ $item->subtitle->price ?? 'NONE' }}</th>
                                             <th hidden>
                                                 <input style="width: 100px; background-color: white; border: none"

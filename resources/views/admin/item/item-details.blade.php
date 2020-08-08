@@ -148,7 +148,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive-sm">
-                        <table class="table table-hover" id="allItemHistory">
+                        <table class="table table-hover table-responsive" id="allItemHistory">
                             <thead>
                             <tr>
                                 <th scope="col">Name</th>
@@ -156,6 +156,8 @@
                                 <th scope="col">Vat</th>
                                 <th scope="col">Quantity</th>
                                 <th scope="col">Amount</th>
+                                <th scope="col">Subtitle Name</th>
+                                <th scope="col">Subtitle price</th>
                                 <th scope="col">Project</th>
                                 <th scope="col">Requested User</th>
                                 <th scope="col">Request Date</th>
@@ -169,6 +171,8 @@
                                     <td>{{ number_format($log->vat,2) }}%</td>
                                     <td>{{ $log->quantity }}</td>
                                     <td>{{ number_format($log->amount,2) }} TK</td>
+                                    <td>{{ $log->subtitle->name }}</td>
+                                    <td>{{ $log->subtitle->price }}</td>
                                     <td>
                                         <a href="{{ route('project.show', ['id' => $log->project_id]) }}"
                                            title="See Project Details">
