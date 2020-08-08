@@ -207,7 +207,6 @@
                                     <thead>
                                     <tr>
                                         <th scope="col">Item Name</th>
-                                        <th scope="col">Item subtitle name</th>
                                         <th scope="col">Mother Category</th>
                                         <th scope="col">Category</th>
                                         <th scope="col">Sub Category</th>
@@ -217,6 +216,7 @@
                                         <th scope="col">Vat</th>
                                         <th scope="col">Quantity</th>
                                         <th scope="col">Amount</th>
+                                        <th scope="col">Item subtitle name</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                     </thead>
@@ -231,11 +231,6 @@
                                                 <input style="width: 200px; background-color: #aed581; border: none"
                                                        type="text" name="addmore[{{ $index }}][item_id]"
                                                        id="item_id" value="{{ $item->options->item_id}}" readonly/>
-                                            </td>
-                                            <td>
-                                                <input style="width: 200px; background-color: #aed581; border: none"
-                                                       type="text" name="addmore[{{ $index }}][item_subtitle]"
-                                                       id="item_subtitle" value="{{ $item->options->item_subtitle}}" readonly/>
                                             </td>
                                             <td hidden>
                                                 <input style="width: 30px; background-color: #aed581; border: none"
@@ -324,6 +319,11 @@
                                                        type="text" name="addmore[{{ $index }}][amount]"
                                                        id="amount" value="{{ $item->options->amount }}"
                                                        readonly/>
+                                            </td>
+                                            <td>
+                                                <input style="width: 200px; background-color: #aed581; border: none"
+                                                       type="text" name="addmore[{{ $index }}][item_subtitle]"
+                                                       id="item_subtitle" value="{{ $item->options->item_subtitle}}" readonly/>
                                             </td>
                                             <td>
                                                 <button id="del" data-row="{{$item->rowId}}" type="button"
